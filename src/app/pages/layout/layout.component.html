@@ -1,0 +1,67 @@
+<div class="dashboard">
+  <div class="dashboard-nav">
+    <header>
+      <a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a
+      ><a href="#" class="brand-logo"
+        ><i class="fas fa-anchor"></i> <span>E-Notes</span></a
+      >
+    </header>
+    <nav class="dashboard-nav-list">
+      <a routerLink="/dashboard" class="dashboard-nav-item"
+        ><i class="fas fa-home"></i> Home </a
+      ><a routerLink="/dashboard" class="dashboard-nav-item active"
+        ><i class="fas fa-tachometer-alt"></i> dashboard
+      </a>
+      <a routerLink="/addnotes" class="dashboard-nav-item"
+        ><i class="fas fa-file-upload"></i> Add Notes
+      </a>
+      <a routerLink="/employee" class="dashboard-nav-item"
+        ><i class="fas fa-file-upload"></i> View Notes
+      </a>
+      <a href="#" class="dashboard-nav-item"
+        ><i class="fas fa-file-upload"></i> Favourite
+      </a>
+      <a href="#" class="dashboard-nav-item"
+        ><i class="fas fa-file-upload"></i> Recycle Bin
+      </a>
+      <div class="dashboard-nav-dropdown">
+        <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"
+          ><i class="fas fa-photo-video"></i> Media
+        </a>
+        <div class="dashboard-nav-dropdown-menu">
+          <a href="#" class="dashboard-nav-dropdown-item">All</a
+          ><a href="#" class="dashboard-nav-dropdown-item">Recent</a
+          ><a href="#" class="dashboard-nav-dropdown-item">Images</a
+          ><a href="#" class="dashboard-nav-dropdown-item">Video</a>
+        </div>
+      </div>
+
+      <a href="#" class="dashboard-nav-item"
+        ><i class="fas fa-user"></i> Profile
+      </a>
+      <div class="nav-item-divider"></div>
+      <a href="#" class="dashboard-nav-item"
+        ><i class="fas fa-sign-out-alt"></i> Logout
+      </a>
+    </nav>
+  </div>
+  <div class="dashboard-app">
+    <header class="dashboard-toolbar">
+      <a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a>
+      <p class="fs-4 text-center">Save & Track Your Notes</p>
+    </header>
+    <div class="dashboard-content">
+      <div class="container">
+        <!-- <div class="card">
+          <div class="card-header">
+            <h1>Welcome back Jim</h1>
+          </div>
+          <div class="card-body">
+            <p>Your account type is: Administrator</p>
+          </div>
+        </div> -->
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
