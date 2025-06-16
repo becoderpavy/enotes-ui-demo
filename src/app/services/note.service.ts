@@ -13,4 +13,8 @@ export class NoteService {
   saveNotes(obj: Notes): Observable<ApiResponse> {
     return this.http.post<ApiResponse>('', obj);
   }
+
+  // getNotesByUser():Observable<ApiResponse>{
+  //   return this
+  // }
 }

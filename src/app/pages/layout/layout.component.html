@@ -8,20 +8,27 @@
     </header>
     <nav class="dashboard-nav-list">
       <a routerLink="/dashboard" class="dashboard-nav-item"
-        ><i class="fas fa-home"></i> Home </a
-      ><a routerLink="/dashboard" class="dashboard-nav-item active"
+        ><i class="fas fa-home"></i> Home
+      </a>
+      <a routerLink="/dashboard" class="dashboard-nav-item active"
         ><i class="fas fa-tachometer-alt"></i> dashboard
       </a>
-      <a routerLink="/addnotes" class="dashboard-nav-item"
+      @for (item of loggedUserMenu; track $index) {
+      <a [routerLink]="item.path" class="dashboard-nav-item active"
+        ><i class="fas fa-tachometer-alt"></i> {{ item.title }}
+      </a>
+      }
+
+      <!-- <a routerLink="/addnotes" class="dashboard-nav-item"
         ><i class="fas fa-file-upload"></i> Add Notes
       </a>
-      <a routerLink="/employee" class="dashboard-nav-item"
+      <a routerLink="/view-notes" class="dashboard-nav-item"
         ><i class="fas fa-file-upload"></i> View Notes
       </a>
-      <a href="#" class="dashboard-nav-item"
+      <a routerLink="/favorite" class="dashboard-nav-item"
         ><i class="fas fa-file-upload"></i> Favourite
       </a>
-      <a href="#" class="dashboard-nav-item"
+      <a href="#" routerLink="/recycle-bin" class="dashboard-nav-item"
         ><i class="fas fa-file-upload"></i> Recycle Bin
       </a>
       <div class="dashboard-nav-dropdown">
@@ -38,9 +45,9 @@
 
       <a href="#" class="dashboard-nav-item"
         ><i class="fas fa-user"></i> Profile
-      </a>
+      </a> -->
       <div class="nav-item-divider"></div>
-      <a href="#" class="dashboard-nav-item"
+      <a href="#" class="dashboard-nav-item" (click)="logout()"
         ><i class="fas fa-sign-out-alt"></i> Logout
       </a>
     </nav>
