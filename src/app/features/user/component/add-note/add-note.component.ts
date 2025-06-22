@@ -1,10 +1,12 @@
 import { Component, inject, Inject, OnInit } from '@angular/core';
-import { MasterService } from '../../services/master.service';
-import { ApiResponse } from '../../model/ApiResponse';
-import { ICategory } from '../../model/Category';
-import { Notes } from '../../model/Notes';
+
+import { ApiResponse } from '../../../../models/ApiResponse';
+import { ICategory } from '../../../../models/Category';
+import { Notes } from '../../../../models/Notes';
 import { FormsModule } from '@angular/forms';
-import { NoteService } from '../../services/note.service';
+import { MasterService } from '../../../../core/services/master.service';
+import { NoteService } from '../../../../core/services/note.service';
+
 @Component({
   selector: 'app-add-note',
   imports: [FormsModule],
@@ -29,10 +31,12 @@ export class AddNoteComponent implements OnInit {
 
   saveNotes() {
     console.log(this.noteObj);
-    this.noteService.saveNotes(this.noteObj).subscribe((res: ApiResponse) => {
-      if (res.status == 'sucess') {
-        alert('saved success');
-      }
+    this.noteService.saveNotes(this.noteObj).subscribe({
+      next: (res: any) => {
+        if (res.status == 'sucess') {
+          alert('saved success');
+        }
+      },
     });
   }
 }

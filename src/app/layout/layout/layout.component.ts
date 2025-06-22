@@ -1,5 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { AuthService } from '../../core/services/auth.service';
+import { StorageService } from '../../core/services/storage.service';
 
 @Component({
   selector: 'app-layout',
@@ -32,9 +34,9 @@ export class LayoutComponent implements OnInit {
     { path: 'recycle-bin', title: 'Recycle Bin', roles: ['USER', 'ADMIN'] },
     { path: 'add-category', title: 'Add Category', roles: ['ADMIN'] },
   ];
-
+  authService = inject(AuthService);
   logout() {
-    localStorage.removeItem('token');
+    this.authService.logout();
   }
   getLogInUserMenu() {
     const logData = localStorage.getItem('userDtls');
