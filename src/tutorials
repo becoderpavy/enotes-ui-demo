@@ -1,0 +1,62 @@
+1. Angular Fundamentals
+Topic	What You Should Know
+Modules & Components	How Angular is structured
+Templates & Data Binding	{{ }}, [property], (event), [(ngModel)]
+Directives	*ngFor, *ngIf, custom structural/directives
+Pipes	Built-in + custom pipes
+Dependency Injection	Services, @Injectable(), singleton patterns
+
+✅ 2. Routing & Navigation
+Concept	Use Case
+RouterModule	Navigate between pages
+Lazy Loading	Feature-based performance optimization
+Route Guards	AuthGuard, AdminGuard, route protection
+Child Routes & Layouts	Nested routes (e.g. admin layout, customer)
+Dynamic Params	/product/:id, route-based data fetching
+
+✅ 3. Component Architecture
+Topic	What to Build
+Smart vs Dumb Components	Container components vs reusable UI parts
+Component Communication	@Input(), @Output(), services
+Feature Modules	AdminModule, CustomerModule, AuthModule
+Standalone Components	For Angular 15+ (optional but powerful)
+Component Lifecycle	ngOnInit, ngOnDestroy, etc.
+
+✅ 4. HTTP & Services
+Area	What to Master
+HttpClient	Making API calls
+Interceptors	Token injection, error handling
+Environment Files	Dev/Prod API switching
+RxJS	Observable, map, catchError, switchMap
+Services	API logic abstraction per feature
+
+✅ 5. State & Forms
+Feature	Description
+Reactive Forms	FormBuilder, FormGroup, FormControl
+Validation	Sync + async, error messages
+State Management (optional)	Signal Store, NgRx, or Services + Subjects
+Local Storage / Session	Persist token/user data securely
+
+✅ 6. Real-World Architecture & Best Practices
+Topic	Why It's Needed
+Folder Structure	Organize features, core, shared, models
+Layout Components	Admin, Customer UI shells
+Reusability	Shared components, directives, pipes
+Performance Optimization	Lazy load, trackBy, change detection
+Testing	Unit testing (Karma), e2e (Cypress/Playwright)
+Theming	SCSS, Tailwind, Angular Material (optional)
+Logging	LoggerService, error interceptor
+
+🧠 Optional But Helpful
+Topic	Benefit
+i18n	Multi-language support
+SSR (Angular Universal)	SEO improvement for public sites
+PWA	Offline support
+Analytics	Track usage (e.g., Google Analytics)
+
+✅ Bonus: Angular CLI Usage
+Task	Command
+Generate component	ng g c features/customer/pages/cart --flat=false
+Generate service	ng g s core/services/auth
+Generate route module	ng g module features/customer --routing
+Build for production	ng build --configuration=production

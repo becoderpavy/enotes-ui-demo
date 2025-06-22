@@ -1,9 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../../../../core/services/auth.service';
-import { StorageService } from '../../../../core/services/storage.service';
+import { AuthService } from '../../../core/services/auth.service';
+import { StorageService } from '../../../core/services/storage.service';
 
 @Component({
   selector: 'app-login',
@@ -27,7 +26,7 @@ export class LoginComponent {
           this.storageService.setItem('token', res.data.token);
           this.storageService.setItem('userDtls', res.data.user);
           alert('Login Succes');
-          this.router.navigateByUrl('dashboard');
+          this.router.navigateByUrl('user/dashboard');
         }
       },
       error: (error) => {
