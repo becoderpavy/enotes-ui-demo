@@ -8,7 +8,7 @@ export const responseInterceptor: HttpInterceptorFn = (req, next) => {
 
   return next(req).pipe(
     tap(() => {
-      console.log('sucess');
+      // console.log('sucess');
     }),
     catchError((error) => {
       errorHandlerService.handleError(error);

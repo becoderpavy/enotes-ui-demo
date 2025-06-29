@@ -4,6 +4,7 @@ import { User } from '../../models/User';
 import { ApiResponse } from '../../models/ApiResponse';
 import { StorageService } from '../../core/services/storage.service';
 import { ApiEndpoint } from '../../constant/api.constant';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,8 +12,8 @@ import { ApiEndpoint } from '../../constant/api.constant';
 export class AuthService {
   constructor(private http: HttpClient) {}
   storageService = inject(StorageService);
-  register(user: User) {
-    return this.http.post(ApiEndpoint.AUTH.REGISTER, user);
+  register(user: User): Observable<ApiResponse> {
+    return this.http.post<ApiResponse>(ApiEndpoint.AUTH.REGISTER, user);
   }
 
   loginUser(user: User) {

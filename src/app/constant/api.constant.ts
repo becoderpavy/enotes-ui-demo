@@ -6,7 +6,7 @@ export const ApiEndpoint = {
     REGISTER: `${environment.apiUrl}/auth/register`,
   },
   NOTES: {
-    ADD_NOTES: '',
+    ADD_NOTES: `${environment.apiUrl}/notes/`,
   },
   MASTER: {
     GET_ACTIVE_CATEGORY: `${environment.apiUrl}/category/active`,

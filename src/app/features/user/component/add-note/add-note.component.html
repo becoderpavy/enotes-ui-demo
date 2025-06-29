@@ -5,23 +5,23 @@
         <p class="fs-3 text-center">Add Notes</p>
       </div>
       <div class="card-body">
-        <form>
+        <form [formGroup]="noteForm" (ngSubmit)="saveNotes()">
           <div class="mb-3">
             <label class="mb-2">Title</label>
             <input
               type="test"
               class="form-control"
-              [(ngModel)]="noteObj.title"
               name="title"
+              formControlName="title"
             />
           </div>
           <div class="mb-3">
             <label class="mb-2">Description</label>
             <textarea
               class="form-control"
-              [(ngModel)]="noteObj.description"
               rows="5"
               name="description"
+              formControlName="description"
             ></textarea>
           </div>
           <div class="row">
@@ -29,24 +29,28 @@
               <label class="mb-2">Category</label>
               <select
                 class="form-control"
-                [(ngModel)]="noteObj.category.id"
                 name="category"
+                formControlName="category"
               >
                 <option selected>--select--</option>
                 @for (item of categoryList; track $index) {
-                <option [value]="item.id">{{ item.name }}</option>
+                <option [value]="item.id">
+                  {{ item.name }}
+                </option>
                 }
               </select>
             </div>
             <div class="col">
               <label class="mb-2">Upload File</label>
-              <input type="file" class="form-control" />
+              <input
+                type="file"
+                class="form-control"
+                (change)="onFileChange($event)"
+              />
             </div>
           </div>
           <div>
-            <button class="btn btn-color mt-3 text-white" (click)="saveNotes()">
-              Submit
-            </button>
+            <button class="btn btn-color mt-3 text-white">Submit</button>
           </div>
         </form>
       </div>
